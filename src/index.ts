@@ -23,12 +23,12 @@ const getD: DGetter = (
   decimals: number,
 ): string => {
   let l: string[] = [];
-  const max: number = Math.max(...values);
-  const length: number = values.length;
-  for (let i: number = 0; i < length; i++) {
+  const maxX: number = values.length - 1;
+  const maxY: number = Math.max(...values);
+  for (let i: number = 0; i <= maxX; i++) {
     l.push(
-      round(i / length * viewBoxWidth, decimals) + ',' +
-      round(viewBoxHeight - (values[i] / max * viewBoxHeight), decimals),
+      round(i / maxX * viewBoxWidth, decimals) + ',' +
+      round(viewBoxHeight - (values[i] / maxY * viewBoxHeight), decimals),
     );
   }
   return `M ${l.join(' L ')}`;
@@ -60,7 +60,7 @@ export default class Sparkline {
     this._height = '100%';
     this._preserveAspectRatio = 'none';
     this._stroke = 'currentColor';
-    this._strokeWidth = 1;
+    this._strokeWidth = '1%';
     this._title = 'Sparkline';
     this._width = '100%';
     this._values = values;
