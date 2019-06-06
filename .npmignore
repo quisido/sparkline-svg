@@ -1,0 +1,10 @@
+/.git
+/node_modules
+/src
+/.gitignore
+/.npmignore
+/.travis.yml
+/package-lock.json
+/tsconfig.json
+/yarn.lock
+/yarn-error.log

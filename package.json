@@ -1,0 +1,29 @@
+{
+  "name": "sparkline-svg",
+  "version": "1.0.0",
+  "author": "Charles Stover <npmjs@charlesstover.com>",
+  "description": "Generates a Sparkline as an SVG.",
+  "homepage": "https://github.com/CharlesStover/sparkline-svg#readme",
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": "https://github.com/CharlesStover/sparkline-svg.git",
+  "bugs": {
+    "url": "https://github.com/CharlesStover/sparkline-svg/issues"
+  },
+  "files": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "memoize-one": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/memoize-one": "^4.1.1",
+    "typescript": "^3.5.1"
+  }
+}
