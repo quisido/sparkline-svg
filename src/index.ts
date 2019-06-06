@@ -96,7 +96,8 @@ export default class Sparkline {
 
       // If a fill color exists,
       if (this._fill !== 'transparent') {
-        const d = `L ${this._viewBoxWidth},${this._viewBoxHeight} L 0,0 Z`;
+        const d: string =
+          `L ${this._viewBoxWidth},${this._viewBoxHeight} L 0,0 Z`;
         fillPath = `
           <path
             d="${this.d} ${d}"
