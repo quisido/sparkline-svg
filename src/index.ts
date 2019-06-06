@@ -34,6 +34,8 @@ const getD: DGetter = (
   return `M ${l.join(' L ')}`;
 };
 
+
+
 export default class Sparkline {
 
   private _decimals: number;
@@ -43,7 +45,7 @@ export default class Sparkline {
   private _height: string;
   private _preserveAspectRatio: string;
   private _stroke: string;
-  private _strokeWidth: number;
+  private _strokeWidth: string;
   private _title: string;
   private _width: string;
   private _values: number[];
@@ -51,19 +53,19 @@ export default class Sparkline {
   private _viewBoxWidth: number;
 
   public constructor(values: number[] = []) {
-    this._decimals = 2;
+    this._decimals = 4;
     this._desc = 'A line graph representation of a value\'s change over time.';
     this._fill = 'transparent';
     this._getD = memoizeOne(getD);
     this._height = '100%';
     this._preserveAspectRatio = 'none';
     this._stroke = 'currentColor';
-    this._strokeWidth = 1;
+    this._strokeWidth = '0.5%';
     this._title = 'Sparkline';
     this._width = '100%';
     this._values = values;
-    this._viewBoxHeight = 1;
-    this._viewBoxWidth = 1;
+    this._viewBoxHeight = 100;
+    this._viewBoxWidth = 100;
   }
 
   public get d(): string {
@@ -90,20 +92,21 @@ export default class Sparkline {
           d="${this.d}"
           fill="transparent"
           stroke="${this._stroke}"
-          strokeWidth="${this._strokeWidth}"
+          stroke-width="${this._strokeWidth}"
         />
       `;
 
       // If a fill color exists,
       if (this._fill !== 'transparent') {
         const d: string =
-          `L ${this._viewBoxWidth},${this._viewBoxHeight} L 0,0 Z`;
+          `L ${this._viewBoxWidth},${this._viewBoxHeight} ` +
+          `L 0,${this._viewBoxHeight} Z`;
         fillPath = `
           <path
             d="${this.d} ${d}"
             fill="${this._fill}"
             stroke="transparent"
-            strokeWidth="0"
+            stroke-width="0"
           />
         `;
       }
@@ -165,7 +168,7 @@ export default class Sparkline {
     return this;
   }
 
-  public setStrokeWidth(strokeWidth: number): this {
+  public setStrokeWidth(strokeWidth: string): this {
     this._strokeWidth = strokeWidth;
     return this;
   }
