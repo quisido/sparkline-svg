@@ -45,7 +45,7 @@ export default class Sparkline {
   private _height: string;
   private _preserveAspectRatio: string;
   private _stroke: string;
-  private _strokeWidth: string;
+  private _strokeWidth: number | string;
   private _title: string;
   private _width: string;
   private _values: number[];
@@ -60,7 +60,7 @@ export default class Sparkline {
     this._height = '100%';
     this._preserveAspectRatio = 'none';
     this._stroke = 'currentColor';
-    this._strokeWidth = '0.5%';
+    this._strokeWidth = 1;
     this._title = 'Sparkline';
     this._width = '100%';
     this._values = values;
@@ -168,7 +168,7 @@ export default class Sparkline {
     return this;
   }
 
-  public setStrokeWidth(strokeWidth: string): this {
+  public setStrokeWidth(strokeWidth: number | string): this {
     this._strokeWidth = strokeWidth;
     return this;
   }
