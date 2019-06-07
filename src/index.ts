@@ -188,6 +188,11 @@ export default class Sparkline {
     return this;
   }
 
+  public setViewBoxWidth(viewBoxWidth: number): this {
+    this._viewBoxWidth = viewBoxWidth;
+    return this;
+  }
+
   public setWidth(width: string): this {
     this._width = width;
     return this;
