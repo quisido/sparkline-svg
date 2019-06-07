@@ -7,6 +7,26 @@ Generate a Sparkline as an SVG.
 * `npm install sparkline-svg` or
 * `yarn add sparkline-svg`
 
+## Table of Contents
+
+* [Use](#use)
+  * [`d`](#get-d-string)
+  * [`dataUri`](#get-datauri-string)
+  * [`outerHTML`](#get-outerhtml-string)
+  * [`setDecimals`](#setdecimalsdecimals-number-this)
+  * [`setDesc`](#setdescdesc-string-this)
+  * [`setDescription`](#setdescriptiondesc-string-this)
+  * [`setFill`](#setfillfill-string-this)
+  * [`setHeight`](#setheightheight-string-this)
+  * [`setPreserveAspectRatio`](#setpreserveaspectratiopreserveaspectratio-string-this)
+  * [`setStroke`](#setstrokestroke-string-this)
+  * [`setStrokeWidth`](#setstrokewidthstrokewidth-number--string-this)
+  * [`setTitle`](#settitletitle-string-this)
+  * [`setValues`](#setvaluesvalues-number-this)
+  * [`setViewBoxHeight`](#setviewboxheightviewboxheight-number-this)
+  * [`setViewBoxWidth`](#setviewboxwidthviewboxwidth-number-this)
+  * [`setWidth`](#setwidthwidth-string-this)
+
 ## Use
 
 The `sparkline-svg` package exports a Sparkline class, which can be constructed with or without an array of values used to generate the sparkline.
@@ -55,7 +75,7 @@ _Default: 'transparent'_
 
 ### setHeight(height: string): this
 
-Sets the height of the sparkline's SVG element. Not to be confused with the view box height.
+Sets the height of the sparkline's SVG element. Not to be confused with `setViewBoxHeight`.
 
 _Default: '100%'_
 
@@ -91,18 +111,18 @@ _Default: []_
 
 ### setViewBoxHeight(viewBoxHeight: number): this
 
-The height of the sparkline's view box. Not to be confused with `setHeight`. The sparkline will always stretch to fit the view box.
+Sets the height of the sparkline's view box. Not to be confused with `setHeight`. The sparkline will always stretch to fit the view box.
 
 _Default: 100_
 
 ### setViewBoxWidth(viewBoxWidth: number): this
 
-The width of the sparkline's view box. Not to be confused with `setWidth`. The sparkline will always stretch to fit the view box.
+Sets the width of the sparkline's view box. Not to be confused with `setWidth`. The sparkline will always stretch to fit the view box.
 
 _Default: 100_
 
 ### setWidth(width: string): this
 
-The width of the sparkline's SVG element. Not to be confused with `setViewBoxWidth`.
+Sets the width of the sparkline's SVG element. Not to be confused with `setViewBoxWidth`.
 
 _Default: '100%'_
