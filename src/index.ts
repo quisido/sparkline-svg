@@ -47,10 +47,10 @@ export default class Sparkline {
   private _stroke: string;
   private _strokeWidth: number | string;
   private _title: string;
-  private _width: string;
   private _values: number[];
   private _viewBoxHeight: number;
   private _viewBoxWidth: number;
+  private _width: string;
 
   public constructor(values: number[] = []) {
     this._decimals = 4;
@@ -81,7 +81,7 @@ export default class Sparkline {
     return `data:image/svg+xml;base64,${btoa(this.outerHTML)}`;
   }
 
-  public get outerHTML() {
+  public get outerHTML(): string {
     let fillPath: string = '';
     let strokePath: string = '';
 
