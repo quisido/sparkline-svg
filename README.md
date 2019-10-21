@@ -126,3 +126,9 @@ _Default: 100_
 Sets the width of the sparkline's SVG element. Not to be confused with `setViewBoxWidth`.
 
 _Default: '100%'_
+
+## Sponsor 💗
+
+If you are a fan of this project, you may
+[become a sponsor](https://github.com/sponsors/CharlesStover)
+via GitHub's Sponsors Program.
