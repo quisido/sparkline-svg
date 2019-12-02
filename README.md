@@ -1,4 +1,4 @@
-# Sparkline SVG
+# Sparkline SVG  [![version](https://img.shields.io/npm/v/sparkline-svg.svg)](https://www.npmjs.com/package/sparkline-svg) [![minzipped size](https://img.shields.io/bundlephobia/minzip/sparkline-svg.svg)](https://www.npmjs.com/package/sparkline-svg) [![downloads](https://img.shields.io/npm/dt/sparkline-svg.svg)](https://www.npmjs.com/package/sparkline-svg) [![build](https://api.travis-ci.com/CharlesStover/sparkline-svg.svg)](https://travis-ci.com/CharlesStover/sparkline-svg/)
 
 Generate a Sparkline as an SVG.
 
