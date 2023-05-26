@@ -31,7 +31,8 @@ const getD: DGetter = (
     const diffY = values[i] - minY
     const partA = round(i / maxX * viewBoxWidth, decimals)
     let partB
-    if (diffY && diffMinMaxY) {
+    /* if the sparkline is a flat line */
+    if (diffMinMaxY) {
       partB = round(
         viewBoxHeight - (diffY / diffMinMaxY) * viewBoxHeight,
         decimals
