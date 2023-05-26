@@ -26,12 +26,12 @@ const getD: DGetter = (
   const maxX: number = values.length - 1;
   const minY: number = Math.min(...values);
   const maxY: number = Math.max(...values);
-  const diffY: number = maxY - minY;
+  const diffMinMaxY: number = maxY - minY;
   for (let i: number = 0; i <= maxX; i++) {
     l.push(
       round(i / maxX * viewBoxWidth, decimals) + ',' +
       round(
-        viewBoxHeight - ((values[i] - minY) / diffY) * viewBoxHeight,
+        viewBoxHeight - ((values[i] - minY) / diffMinMaxY) * viewBoxHeight,
         decimals
       )
     );
