@@ -103,6 +103,7 @@ export default class Sparkline {
           fill="transparent"
           stroke="${this._stroke}"
           stroke-width="${this._strokeWidth}"
+          transform="translate(0.5,0.5)"
         />
       `;
 
