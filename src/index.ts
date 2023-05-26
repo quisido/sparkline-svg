@@ -28,13 +28,18 @@ const getD: DGetter = (
   const maxY: number = Math.max(...values);
   const diffMinMaxY: number = maxY - minY;
   for (let i: number = 0; i <= maxX; i++) {
-    l.push(
-      round(i / maxX * viewBoxWidth, decimals) + ',' +
-      round(
-        viewBoxHeight - ((values[i] - minY) / diffMinMaxY) * viewBoxHeight,
+    const diffY = values[i] - minY
+    const partA = round(i / maxX * viewBoxWidth, decimals)
+    let partB
+    if (diffY && diffMinMaxY) {
+      partB = round(
+        viewBoxHeight - (diffY / diffMinMaxY) * viewBoxHeight,
         decimals
       )
-    );
+    } else {
+      partB = 0
+    }
+    l.push(partA + ',' + partB);
   }
   return `M ${l.join(' L ')}`;
 };
