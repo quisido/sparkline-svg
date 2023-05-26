@@ -24,12 +24,22 @@ const getD: DGetter = (
 ): string => {
   let l: string[] = [];
   const maxX: number = values.length - 1;
+  const minY: number = Math.min(...values);
   const maxY: number = Math.max(...values);
+  const diffMinMaxY: number = maxY - minY;
   for (let i: number = 0; i <= maxX; i++) {
-    l.push(
-      round(i / maxX * viewBoxWidth, decimals) + ',' +
-      round(viewBoxHeight - (values[i] / maxY * viewBoxHeight), decimals),
-    );
+    const diffY = values[i] - minY
+    const partA = round(i / maxX * viewBoxWidth, decimals)
+    let partB
+    if (diffY && diffMinMaxY) {
+      partB = round(
+        viewBoxHeight - (diffY / diffMinMaxY) * viewBoxHeight,
+        decimals
+      )
+    } else {
+      partB = 0
+    }
+    l.push(partA + ',' + partB);
   }
   return `M ${l.join(' L ')}`;
 };
@@ -93,6 +103,7 @@ export default class Sparkline {
           fill="transparent"
           stroke="${this._stroke}"
           stroke-width="${this._strokeWidth}"
+          transform="translate(0.5,0.5)"
         />
       `;
 
